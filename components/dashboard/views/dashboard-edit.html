@@ -1,22 +1,30 @@
-<div class = "container">
-    <p>Edit this product</p>
-						  
-    <form class="form-horizontal" role="form">
+<!-- form for editing the selected product -->
+<div class = "container">						  
+    <form name ="createForm" class="form-horizontal" role="form">
         
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Code</label>
 				<div class="col-sm-10">
-					  <input type="text" class="form-control" ng-model="editCtrl.selected.code">
+                    <input type="number" name ="code" required ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="editCtrl.selected.code">
+                    <span ng-show="createForm.code.$error.pattern">Not a valid number!</span>
+                    <span ng-show="createForm.code.$error.required">Please enter a product code</span>
 				</div>
         </div>
         
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Name</label>
+            <label class="col-sm-2 col-form-label">Type</label>
 				<div class="col-sm-10">
-					  <input type="text" class="form-control" ng-model="editCtrl.selected.name">
+					  <input type="text" class="form-control" ng-model="editCtrl.selected.type">
 				</div>
         </div>
         
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Shelf</label>
+				<div class="col-sm-10">
+					  <input type="text" class="form-control" ng-model="editCtrl.selected.shelf">
+				</div>
+        </div>
+
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Gender</label>
 				<div class="col-sm-10">
@@ -34,14 +42,15 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Price</label>
 				<div class="col-sm-10">
-				    <input type="text" class="form-control" ng-model="editCtrl.selected.price">
+				    <input type="number" class="form-control" ng-model="editCtrl.selected.price">
 				</div>
         </div>
         
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Quantity</label>
 				<div class="col-sm-10">
-				    <input type="text" class="form-control" ng-model="editCtrl.selected.quantity">
+                    <input type="number" name="code" ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="editCtrl.selected.quantity">
+                    <span ng-show="createForm.code.$error.pattern">Not a valid number!</span>
 				</div>
         </div>
         
@@ -53,8 +62,7 @@
             </div>
         </div>
     </form>
-
-						
+				
     <button type="button" class="btn btn-default" ui-sref="dashboard">
         <span>Close</span>
     </button>					

@@ -6,7 +6,6 @@
                 'ui.router',
                 'dashboardModule',
                 'welcomeModule'
-    ]);
-	
-	
+        ]);
+
 })();

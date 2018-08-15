@@ -3,8 +3,6 @@
     'use strict';
     
     angular
-        .module('welcomeModule', [
-		
-	]);
-    
+        .module('welcomeModule', [	
+	    ]);   
 })();

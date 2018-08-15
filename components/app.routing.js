@@ -12,8 +12,7 @@
     function Config($stateProvider) {
         $stateProvider
             .state('main', {
-                abstract: true,
-  
+                abstract: true 
             });
         }
     })();

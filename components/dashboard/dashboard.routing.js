@@ -12,7 +12,7 @@
         ];
     
     function Config($stateProvider) {
-        
+        // routing for dashboard, dashboard create/view/edit - all children of main
         $stateProvider
             .state('dashboard', {
                 parent: 'main',
@@ -25,48 +25,37 @@
                 }
         })
         
-        .state('create', {
-            parent: 'main',
-            url: '/create',
-            views: {
-                'content@': {
-                    templateUrl: 'components/dashboard/views/dashboard-create.html',
-                    controller: 'dashboard.dashboardCreateController as createCtrl'
+            .state('create', {
+                parent: 'main',
+                url: '/create',
+                views: {
+                    'content@': {
+                        templateUrl: 'components/dashboard/views/dashboard-create.html',
+                        controller: 'dashboard.dashboardCreateController as createCtrl'
+                    }
                 }
-            }
-        })
-        
-         .state('edit', {
-            parent: 'main',
-            url: '/edit',
-            views: {
-                'content@': {
-                    templateUrl: 'components/dashboard/views/dashboard-edit.html',
-                    controller: 'dashboard.dashboardEditController as editCtrl'
+            })
+            
+            .state('edit', {
+                parent: 'main',
+                url: '/edit',
+                views: {
+                    'content@': {
+                        templateUrl: 'components/dashboard/views/dashboard-edit.html',
+                        controller: 'dashboard.dashboardEditController as editCtrl'
+                    }
                 }
-            }
-        })
-        
-         .state('delete', {
-            parent: 'main',
-            url: '/delete',
-            views: {
-                'content@': {
-                    templateUrl: 'components/dashboard/views/dashboard-delete.html',
-                    controller: 'dashboard.dashboardDeleteController as deleteCtrl'
+            })
+            
+            .state('view', {
+                parent: 'main',
+                url: '/view',
+                views: {
+                    'content@': {
+                        templateUrl: 'components/dashboard/views/dashboard-view.html',
+                        controller: 'dashboard.dashboardViewController as viewCtrl'
+                    }
                 }
-            }
-        })
-        
-         .state('view', {
-            parent: 'main',
-            url: '/view',
-            views: {
-                'content@': {
-                    templateUrl: 'components/dashboard/views/dashboard-view.html',
-                    controller: 'dashboard.dashboardViewController as viewCtrl'
-                }
-            }
-        })
+            })
     }
 })();

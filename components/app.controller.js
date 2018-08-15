@@ -8,13 +8,10 @@
             Controller);
 
     Controller.$inject = [
-        '$scope',
-        '$state'
     ];
 
-    function Controller($scope,
-        $state) {
-        var vm = this;
-
+    function Controller(
+        ) 
+    {
     }
 })();

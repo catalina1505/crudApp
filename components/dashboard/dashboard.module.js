@@ -3,7 +3,6 @@
     'use strict';
     
     angular
-        .module('dashboardModule', [
-		
+        .module('dashboardModule', [	
 	]);
 })();

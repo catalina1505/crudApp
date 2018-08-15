@@ -1,45 +1,49 @@
+<!-- form for creating a new product -->
 <div class="container">  
     <br>
-    <form class="form-horizontal" role="form">
+    <form name ="createForm" class="form-horizontal" id="checked-form" role="form">
         <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Code</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.code">
+                <input name="code" class="form-control" type ="number" required ng-pattern="/^[0-9]\d*$/" ng-model="createCtrl.newProduct.code" placeholder="Code">
+                <span ng-show="createForm.code.$error.pattern">Not a valid number!</span>
+                <span ng-show="createForm.code.$error.required">Please enter a product code</span>
             </div>
         </div>
 
         <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.name">
+                <input type="text" class="form-control" ng-model="createCtrl.newProduct.type" placeholder="Type (e.g. Jeans)">
             </div>
         </div>
 
         <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Gender</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="createCtrl.newProduct.shelf" placeholder="Shelf">
+                </div>
+            </div>
+
+        <div class="form-group row">
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.gender">
+                <input type="text" class="form-control" ng-model="createCtrl.newProduct.gender" placeholder="Gender">
             </div>
         </div>
 
         <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Size</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.size">
+                <input type="text" class="form-control" ng-model="createCtrl.newProduct.size" placeholder="Size">
             </div>
         </div>
 
         <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Price</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.price">
+                <input type="number" class="form-control" ng-model="createCtrl.newProduct.price" placeholder="Price">
             </div>
         </div>
 
         <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Quantity</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.quantity">
+                <input type="number" name="code" ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="createCtrl.newProduct.quantity" placeholder="Quantity">
+                <span ng-show="createForm.code.$error.pattern">Not a valid number!</span>
             </div>
         </div>
 
@@ -51,7 +55,7 @@
             </div>
         </div>
     </form>
-
+ <!-- find other solution for ui-sref -->
         <button type="button" class="btn btn-default" ui-sref= "dashboard">
             <span>Close</span>
         </button>

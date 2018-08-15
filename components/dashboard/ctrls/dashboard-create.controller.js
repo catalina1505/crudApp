@@ -11,7 +11,6 @@
 		'$timeout',
 		'dataHolder',
 		'$localstorage'
-
         ];
     
     function Controller(
@@ -19,19 +18,17 @@
 			dataHolder,
 			$localstorage
 						) 
-{
+	{
         var vm = this;
+	    vm.newProduct = {};
 
-	   vm.newProduct = {};
-
+		// create a new product and push it into the products list from dataHolder service
         vm.saveProduct = function(){
 		   dataHolder.products.push(vm.newProduct);
 		   $timeout(function() {
 				return $localstorage.setObject('products', dataHolder.products);
 			}, 2000);
 			vm.newProduct = {};
-		};
-
-		
+		};	
 	}
 })();

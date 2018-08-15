@@ -7,6 +7,23 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+input:invalid {
+    border: 1px solid red;
+  }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; 
+  }
+
+/* #checked-form:input[type="text"]:valid {
+    background: url(images/check.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+} */
+
 .welcome {
     padding: 207px;
     text-align: center;

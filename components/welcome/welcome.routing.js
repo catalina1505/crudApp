@@ -7,8 +7,7 @@
         .config(Config);
     
     Config.$inject = [
-        '$stateProvider'
-		
+        '$stateProvider'		
         ];
     
     function Config($stateProvider) {

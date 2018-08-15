@@ -19,28 +19,18 @@
 		$timeout,
 		dataHolder,
 		$localstorage
-	) {
+	) 
+	{
 		var vm = this;
-
 		vm.prod = dataHolder.products;
 		vm.selected = {};
-		//vm.search = search;
 		vm.selectProduct = selectProduct;
-
-		// function search() {
-		// 	vm.products.forEach(product, function(product, product.code) {
-		// 		if(product.code.includes(vm.searchh)) {
-		// 			product.display = true;
-		// 		}
-		// 		else product.display = false;
-		// 	}
-		// 	)}
-			
 		
 		function selectProduct(product) {
 			vm.selected = product;
 		}
 
+		// finds the selected product in dataHolder using the code and deletes it with splice
 		vm.deleteProduct = function () {
 			var index = vm.prod.findIndex(function (elem) { return elem.code == vm.selected.code })
 			vm.prod.splice(index, 1);
@@ -57,9 +47,6 @@
 		vm.viewProd = function (product) {
 			dataHolder.selected = product;
 			$state.go('view');
-		}
-
-		
-
+		}		
 	}
 })();

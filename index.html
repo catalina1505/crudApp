@@ -2,54 +2,54 @@
 
 <html lang="en" ng-app='appModule' ng-controller="AppController">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD App</title>
-    <meta name="description" content="my first crud application" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD App</title>
+        <meta name="description" content="my first crud application" />
 
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
+        <!-- Styles -->
+        <link rel="stylesheet" href="./styles/bootstrap.min.css">
+        <link rel="stylesheet" href="./styles/tether.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
 
 
-<body>
+    <body>
 
-    <div ui-view="content"></div>
+        <div ui-view="content"></div>
 
-<!--Imported scripts-->
-<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>  
-<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
-<script type="text/javascript" src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <!--Imported scripts-->
+    <script type="text/javascript" src="./scripts/jquery.min.js"></script>  
+    <script type="text/javascript" src="./scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./scripts/angular.min.js"></script>
+    <script type="text/javascript" src="./scripts/angular-ui-router.min.js"></script>
 
-<!--Scripts-->
-<script type="text/javascript" src="components/app.module.js" ></script>
-<script type="text/javascript" src="./components/app.routing.js"></script>
+    <!--Scripts-->
+    <script type="text/javascript" src="./components/app.module.js" ></script>
+    <script type="text/javascript" src="./components/app.routing.js"></script>
 
-<script type="text/javascript" src="./components/app.controller.js"></script>
+    <script type="text/javascript" src="./components/app.controller.js"></script>
 
-<script type="text/javascript" src="./components/shared/services/DataHolderService.js"></script>
-<script type="text/javascript" src="./components/shared/services/LocalStorageService.js"></script>
+    <script type="text/javascript" src="./components/shared/services/DataHolderService.js"></script>
+    <script type="text/javascript" src="./components/shared/services/LocalStorageService.js"></script>
 
-<!--Welcome Module-->
-<script type="text/javascript" src="./components/welcome/welcome.module.js"></script>
-<script type="text/javascript" src="./components/welcome/welcome.routing.js"></script>
+    <!--Welcome Module-->
+    <script type="text/javascript" src="./components/welcome/welcome.module.js"></script>
+    <script type="text/javascript" src="./components/welcome/welcome.routing.js"></script>
 
-<script type="text/javascript" src="./components/welcome/ctrls/welcome.controller.js"></script>
+    <script type="text/javascript" src="./components/welcome/ctrls/welcome.controller.js"></script>
 
-<!--Dashboard Module-->
-<script type="text/javascript" src="./components/dashboard/dashboard.module.js"></script>
-<script type="text/javascript" src="./components/dashboard/dashboard.routing.js"></script>
+    <!--Dashboard Module-->
+    <script type="text/javascript" src="./components/dashboard/dashboard.module.js"></script>
+    <script type="text/javascript" src="./components/dashboard/dashboard.routing.js"></script>
 
-<script type="text/javascript" src="./components/dashboard/ctrls/dashboard.controller.js"></script>
-<script type="text/javascript" src="./components/dashboard/ctrls/dashboard-view.controller.js"></script>
-<script type="text/javascript" src="./components/dashboard/ctrls/dashboard-edit.controller.js"></script>
-<script type="text/javascript" src="./components/dashboard/ctrls/dashboard-create.controller.js"></script>
+    <script type="text/javascript" src="./components/dashboard/ctrls/dashboard.controller.js"></script>
+    <script type="text/javascript" src="./components/dashboard/ctrls/dashboard-view.controller.js"></script>
+    <script type="text/javascript" src="./components/dashboard/ctrls/dashboard-edit.controller.js"></script>
+    <script type="text/javascript" src="./components/dashboard/ctrls/dashboard-create.controller.js"></script>
 
 
-</body>
-
+    </body>
 </html>

@@ -23,11 +23,11 @@
 
         // find the selected product in dataHolder and update it
         vm.updateProduct = function() {
-        var index = vm.prod.findIndex(function(elem){ return elem.code == vm.selected.code})
-        vm.prod(index) = vm.selected;
-        $timeout(function() {
-            return $localstorage.setObject('products', dataHolder.products);
-        }, 2000);
-    };
-} 
+            var index = vm.prod.findIndex(function(elem){ return elem.code == vm.selected.code})
+            vm.prod(index) = vm.selected;
+            $timeout(function() {
+                return $localstorage.setObject('products', dataHolder.products);
+            }, 2000);
+        };
+    } 
 })();

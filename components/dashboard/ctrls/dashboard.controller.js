@@ -22,10 +22,24 @@
 	) 
 	{
 		var vm = this;
-		vm.prod = dataHolder.products;
 		vm.selected = {};
 		vm.selectProduct = selectProduct;
-		
+		vm.propertyName = 'price';
+		vm.reverse = true;
+		vm.prod = dataHolder.products;
+
+		// still working on sorting
+		vm.sortBy = function(propertyName) {
+		  vm.reverse = (vm.propertyName === propertyName) ? !vm.reverse : false;
+		  vm.propertyName = propertyName;
+		};
+
+		//working on save as pdf
+		vm.pdfMaker = function(){
+			var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
+			pdfMake.createPdf(docDefinition).download('Dashboard.pdf');
+		}
+
 		function selectProduct(product) {
 			vm.selected = product;
 		}
@@ -47,6 +61,8 @@
 		vm.viewProd = function (product) {
 			dataHolder.selected = product;
 			$state.go('view');
-		}		
+		}
+		
+		
 	}
 })();

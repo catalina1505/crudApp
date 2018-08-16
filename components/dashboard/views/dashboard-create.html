@@ -2,49 +2,63 @@
 <div class="container">  
     <br>
     <form name ="createForm" class="form-horizontal" id="checked-form" role="form">
-        <div class="form-group row" >
+        <!-- <div class="form-group row" >
             <div class="col-sm-10">
                 <input class="form-control" ng-model="createCtrl.newProduct.code" readonly>
             </div>
-        </div>
+        </div> -->
 
         <div class="form-group row">
-            <div class="col-sm-10" ng-model="createCtrl.newProduct.type">
-                    <label class="radio-inline"><input type="radio" name="optradio" checked>Polo</label>
-                    <label class="radio-inline"><input type="radio" name="optradio">Message</label>
-                    <label class="radio-inline"><input type="radio" name="optradio">Graphic</label>
-                    
-                <!-- <input type="text" class="form-control" ng-model="createCtrl.newProduct.type" placeholder="Type (e.g. Jeans)"> -->
+            <label class="col-sm-2 col-form-label">Type</label>
+            <div class="col-sm-10">
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.type" value="Simple" >Simple</label>
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.type" value="Message" >Message</label>
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.type" value="Graphic">Graphic</label>   
             </div>
         </div>
 
         <div class="form-group row">
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" ng-model="createCtrl.newProduct.shelf" placeholder="Shelf">
+            <label class="col-sm-2 col-form-label">Shelf</label>
+            <div class="col-sm-10">
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.shelf" value="A">A</label>
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.shelf" value="B">B</label>
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.shelf" value="C">C</label>
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.shelf" value="D">D</label>
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.shelf" value="E">E</label>                         
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.shelf" value="F">F</label>                                       
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-10">
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.gender" value="M" >M</label>
+                <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.gender" value="F">F</label>            
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Size</label>
+            <div class="col-sm-10">
+                    <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.size" value="XS" >XS</label>
+                    <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.size" value="S" >S</label>
+                    <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.size" value="M" >M</label>
+                    <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.size" value="L" >L</label>
+                    <label class="radio-inline"><input type="radio" ng-model="createCtrl.newProduct.size" value="XL" >XL</label>           
                 </div>
-            </div>
+        </div>
 
         <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Price</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.gender" placeholder="Gender">
+                <input type="number" class="form-control" ng-model="createCtrl.newProduct.price">
             </div>
         </div>
 
         <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Quantity</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="createCtrl.newProduct.size" placeholder="Size">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col-sm-10">
-                <input type="number" class="form-control" ng-model="createCtrl.newProduct.price" placeholder="Price">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col-sm-10">
-                <input type="number" name="quantity" ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="createCtrl.newProduct.quantity" placeholder="Quantity">
+                <input type="number" name="quantity" ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="createCtrl.newProduct.quantity">
                 <span ng-show="createForm.quantity.$error.pattern">Not a valid number!</span>
             </div>
         </div>

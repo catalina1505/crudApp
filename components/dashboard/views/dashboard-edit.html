@@ -2,41 +2,53 @@
 <div class = "container">						  
     <form name ="createForm" class="form-horizontal" role="form">
         
-        <div class="form-group row">
+        <!-- <div class="form-group row">
             <label class="col-sm-2 col-form-label">Code</label>
 				<div class="col-sm-10">
                     <input type="number" name ="code" required ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="editCtrl.selected.code">
                     <span ng-show="createForm.code.$error.pattern">Not a valid number!</span>
                     <span ng-show="createForm.code.$error.required">Please enter a product code</span>
 				</div>
-        </div>
+        </div> -->
         
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Type</label>
 				<div class="col-sm-10">
-					  <input type="text" class="form-control" ng-model="editCtrl.selected.type">
-				</div>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.type" value="Simple" >Simple</label>
+                    <label class="radio-inline"><input type="radio" ng-model="edittrl.selected.type" value="Message" >Message</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.type" value="Graphic">Graphic</label>   				
+                </div>
         </div>
         
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Shelf</label>
 				<div class="col-sm-10">
-					  <input type="text" class="form-control" ng-model="editCtrl.selected.shelf">
-				</div>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="A" >A</label> 
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="B" >B</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="C" >C</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="D" >D</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="E" >E</label>                        
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="F" >F</label>							
+                </div>
         </div>
 
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Gender</label>
 				<div class="col-sm-10">
-					  <input type="text" class="form-control" ng-model="editCtrl.selected.gender">
-				</div>
+                    <label class="radio-inline"><input type="radio" ng-model="edittrl.selected.gender" value="M" >M</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.gender" value="F">F</label> 				
+                </div>
         </div>
         
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Size</label>
 				<div class="col-sm-10">
-					  <input type="text" class="form-control" ng-model="editCtrl.selected.size">
-				</div>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="XS" >XS</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="S" >S</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="M" >M</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="L" >L</label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="XL" >XL</label>				
+                </div>
         </div>
         
         <div class="form-group row">

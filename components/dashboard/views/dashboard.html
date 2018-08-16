@@ -7,8 +7,8 @@
 	<nav class="navbar navbar-light bg-light">
 			<form class="form-inline">
 				<!-- search a product using the code -->
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ng-model="searchModel.code">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="filterSearch = searchModel">Search</button>
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
 			</form>
 		</nav>
 		
@@ -34,7 +34,7 @@
 		</thead>
 
 		<tbody>
-		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code}">
+		<tr ng-repeat= "product in dashboardCtrl.prod | filter: search">
 		  <th scope="row">{{$index+1}}.</th>
 			<td type="number">{{product.code}}</td>
 			<td>{{product.type}}</td>

@@ -9,12 +9,15 @@
     
     Controller.$inject = [
         'dataHolder',
-        '$localstorage'
+        '$localstorage',
+        'ngNotify'
         ];
     
     function Controller (
             dataHolder,
-            $localstorage)   
+            $localstorage,
+            ngNotify
+        )   
     {
         var vm = this;
         vm.editProduct = {};
@@ -24,6 +27,9 @@
         // find the selected product in dataHolder and update it
         vm.updateProduct = function() {
             var index = vm.prod.findIndex(function(elem){ return elem.code == vm.selected.code})
+            //edited product notification
+            ngNotify.set('Edited product was saved!', 'success')
+
             vm.prod(index) = vm.selected;
             $timeout(function() {
                 return $localstorage.setObject('products', dataHolder.products);

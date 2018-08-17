@@ -10,13 +10,15 @@
     Controller.$inject = [
 		'$timeout',
 		'dataHolder',
-		'$localstorage'
+		'$localstorage',
+		'ngNotify'
         ];
     
     function Controller(
 			$timeout,
 			dataHolder,
-			$localstorage
+			$localstorage,
+			ngNotify
 						) 
 	{
         var vm = this;
@@ -27,7 +29,8 @@
 		   dataHolder.products.push(vm.newProduct);
 		   	// generate an unique code: date in milliseconds + random number
 		   vm.newProduct.code = Date.now() + Math.random().toString(16).slice(2,5);
-
+		   //new product notification
+			ngNotify.set('You added a new product!', 'success')
 		   $timeout(function() {
 				return $localstorage.setObject('products', dataHolder.products);
 			}, 2000);

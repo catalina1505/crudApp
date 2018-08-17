@@ -1,15 +1,11 @@
 html {
     position: relative;
     height: 100%;
-    margin: 0;
-   
+    margin: 0;  
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    margin: 0;
-
+    font-family: Arial, Helvetica, sans-serif
 }
 
 
@@ -19,6 +15,12 @@ input::-webkit-inner-spin-button {
       margin: 0; 
   }
 
+img {
+    height:23px;
+    width:23px
+}
+
+
   .sortorder:after {
     content: '\25b2';   
   }
@@ -27,29 +29,15 @@ input::-webkit-inner-spin-button {
   }
 
 
-
-
-/* .welcome {
-    background-image: url(/assets/images/pexels-photo-761963.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-  
-
-} */
-
 .welcome {
     background-size: cover;
-    background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(/assets/images/pexels-photo-761963.jpeg);
+    background-image: url(/assets/images/welcome.jpeg);
     min-height: 1010px;
     height: 100%; 
     flex-direction: column
-
 }
 
 .welcome-form {
@@ -59,12 +47,48 @@ input::-webkit-inner-spin-button {
     background-color: transparent;
     position: relative;
     padding-top: 0;
-    margin-bottom: 80px;
+    margin-bottom: 80px
 }
 
 .welcome-message {
     text-align: center;
     font-size: 40px;
     margin-bottom: 300px;
+    color: white
+}
+
+.container {
+    background-color: #3B7797;
+    min-height: 1010px;
+    height:100%;
     color: white;
+    padding: 20px 30px;
+}
+
+.btn-negative {
+    background-color: #E46054;
+    color: white;
+}
+
+.btn-positive {
+    background-color: #F7B32B;
+    color: white;
+}
+
+.btn-download {
+    background-color: #A0C1D1;
+    color: white;
+}
+
+.btn-sign-in {
+    background-color: #3B7797;
+    color: white;
+}
+
+.btn-background {
+    background-color: #3B7797;
+}
+
+.radio-inline {
+    padding: 7px;
 }

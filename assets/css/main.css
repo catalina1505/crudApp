@@ -58,35 +58,31 @@ img {
 }
 
 .container {
-    background-color: #3B7797;
-    min-height: 1010px;
+    background-color: #FEF9FF;
+    min-height: 1000px;
     height:100%;
-    color: white;
+    color: black;
     padding: 20px 30px;
 }
 
 .btn-negative {
-    background-color: #E46054;
+    background-color: #FCD581;
     color: white;
 }
 
 .btn-positive {
-    background-color: #F7B32B;
-    color: white;
-}
-
-.btn-download {
-    background-color: #A0C1D1;
+    background-color: #C3BABA;
     color: white;
 }
 
 .btn-sign-in {
-    background-color: #3B7797;
+    background-color: #3E6990;
     color: white;
 }
 
+
 .btn-background {
-    background-color: #3B7797;
+    background-color: #FEF9FF;
 }
 
 .radio-inline {

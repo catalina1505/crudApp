@@ -1,10 +1,14 @@
-<div class="container">
+<div class="container" id="print">
 	
 	<!--DASHBOARD HEAD-->
 	<button type="button" class="btn btn-positive float-right" ui-sref="create"> New product</button>
 	<button type="submit" class="btn-negative btn" ui-sref="welcome">Sign out</button>
-	<button class="btn btn-download" ng-click="pdfMaker()">Download</button>
-	<br>
+
+	<button class="btn btn-background" ng-print print-element-id="print">
+	<i class="fa fa-print"></i> 
+	<img src="/assets/images/print.png">
+   </button>	
+	   <br>
 	<br>
 	<nav class="navbar navbar-light bg-light">
 			<form class="form-inline">
@@ -26,21 +30,15 @@
 			<th scope="col">Shelf</th>
 			<th scope="col">Gender</th>
 			<th scope="col">Size</th>			
-			<th scope="col">
-				<select size="1" name="product" value='Price'>
-					<option value='Price'>Price</option>
-					<option value='Ascending'>Ascending</option>
-					<option value='Descending'>Descending</option>
-				</select>
+			<th scope="col"> 
+				<button ng-click="sortBy('price')">Price</button>
+				<span class="sortorder" ng-show="propertyName === 'price'" ng-class="{reverse: reverse}"></span>
 			</th>
-		  <th scope="col">				
-		  	<select size="1" name="product" value='Quantity'>
-				<option value='Quantity'>Quantity</option>
-				<option value='Ascending'>Ascending</option>
-				<option value='Descending'>Descending</option>
-			</select>
-		</th>
-		<th scope="col">Actions</th>
+		  	<th scope="col">
+				<button ng-click="sortBy('quantity')">Quantity</button>
+				<span class="sortorder" ng-show="propertyName === 'quantity'" ng-class="{reverse: reverse}"></span>
+			  </th>
+			<th scope="col">Actions</th>
 		</tr>
 		</thead>
 

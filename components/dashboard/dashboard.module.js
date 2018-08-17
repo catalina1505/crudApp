@@ -3,5 +3,7 @@
     'use strict';
     
     angular
-        .module('dashboardModule', ['ngNotify']);
+        .module('dashboardModule', ['ngNotify',
+                                    'ngPrint'
+                                    ]);
 })();

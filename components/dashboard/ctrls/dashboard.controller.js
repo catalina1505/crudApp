@@ -11,16 +11,15 @@
 		'$state',
 		'$timeout',
 		'dataHolder',
-		'$localstorage',
-		'ngNotify'
+		'$localstorage'
 	];
 
 	function Controller(
 		$state,
 		$timeout,
 		dataHolder,
-		$localstorage,
-		ngNotify
+		$localstorage
+		
 	) 
 	{
 		var vm = this;
@@ -35,12 +34,6 @@
 		  vm.reverse = (vm.propertyName === propertyName) ? !vm.reverse : false;
 		  vm.propertyName = propertyName;
 		};
-
-		//working on save as pdf
-		vm.pdfMaker = function(){
-			var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
-			pdfMake.createPdf(docDefinition).download('Dashboard.pdf');
-		}
 
 		function selectProduct(product) {
 			vm.selected = product;

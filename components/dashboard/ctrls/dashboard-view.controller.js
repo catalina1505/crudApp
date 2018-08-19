@@ -20,5 +20,6 @@
         var vm = this;
         // brings the selected item from dataHolder
         vm.selected = dataHolder.selected;
+        vm.date = new Date();
         }   
 })();

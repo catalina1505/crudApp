@@ -7,15 +7,16 @@
 	<button class="btn btn-background" ng-print print-element-id="print">
 	<i class="fa fa-print"></i> 
 	<img src="/assets/images/print.png">
-   </button>	
-	   <br>
+   </button>
+
+	<br>
 	<br>
 	<nav class="navbar navbar-light bg-light">
-			<form class="form-inline">
-				<!-- search a product using the code -->
-				<input class="form-control mr-sm-2 input-sm" type="search" placeholder="Code" aria-label="Search" ng-model="searchModel.code">
-				<button class="btn btn-background btn-sm my-2 my-sm-0" type="submit" ng-click="filterSearch = searchModel"><img src="/assets/images/search.png"> </button>
-			</form>
+		<form class="form-inline">
+			<!-- search a product using the code -->
+			<input class="form-control mr-sm-2 input-sm" type="search" placeholder="Code" aria-label="Search" ng-model="searchModel.code">
+			<button class="btn btn-background btn-sm my-2 my-sm-0" type="submit" ng-click="filterSearch = searchModel"><img src="/assets/images/search.png"> </button>
+		</form>
 	</nav>
 	<span class="clearfix"></span>
 	<hr>	
@@ -31,11 +32,11 @@
 			<th scope="col">Gender</th>
 			<th scope="col">Size</th>			
 			<th scope="col"> 
-				<button ng-click="sortBy('price')">Price</button>
-				<span class="sortorder" ng-show="propertyName === 'price'" ng-class="{reverse: reverse}"></span>
+				<button type="button" ng-click="dashboardCtrl.sortBy('price')">Price</button>
+				<span type="button" class="sortorder" ng-show="propertyName === 'price'" ng-class="{reverse: reverse}"></span>
 			</th>
 		  	<th scope="col">
-				<button ng-click="sortBy('quantity')">Quantity</button>
+				<button type="button" ng-click="dashboardCtrl.sortBy('quantity')">Quantity</button>
 				<span class="sortorder" ng-show="propertyName === 'quantity'" ng-class="{reverse: reverse}"></span>
 			  </th>
 			<th scope="col">Actions</th>
@@ -54,12 +55,10 @@
 			<td>{{product.quantity}}</td>
 			<td><button type="button" class="btn btn-background btn-sm" ng-click="dashboardCtrl.editProd(product)"><img src="/assets/images/edit.png"> </button>
 			<button type="button" class="btn btn-background btn-sm" ng-click="dashboardCtrl.viewProd(product)"> <img src="/assets/images/View.png"> </button>
-			<button type="button" class="btn btn-background btn-sm" ng-click="dashboardCtrl.selectProduct(product)" data-toggle="modal" data-target="#myModalDelete"> 
-				<img src="/assets/images/delete.png"> </button></td>
+			<button type="button" class="btn btn-background btn-sm" ng-click="dashboardCtrl.selectProduct(product)" data-toggle="modal" data-target="#myModalDelete"> <img src="/assets/images/delete.png"> </button></td>
 		</tr>
 		</tbody>
 	</table>
-</div>	 
 
 <!--Delete Modal start-->
 <div class="modal fade" id="myModalDelete" role="dialog">

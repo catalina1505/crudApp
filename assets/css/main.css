@@ -5,29 +5,20 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'Istok Web';
+    font-size: 18px
 }
-
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0; 
-  }
+}
 
 img {
     height:23px;
     width:23px
 }
-
-
-  .sortorder:after {
-    content: '\25b2';   
-  }
-  .sortorder.reverse:after {
-    content: '\25bc';   
-  }
-
 
 .welcome {
     background-size: cover;
@@ -79,7 +70,6 @@ img {
     background-color: #3E6990;
     color: white;
 }
-
 
 .btn-background {
     background-color: #FEF9FF;

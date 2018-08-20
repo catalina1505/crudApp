@@ -42,7 +42,9 @@
 		vm.deleteProduct = function () {
 			var index = vm.prod.findIndex(function (elem) { return elem.code == vm.selected.code })
 			vm.prod.splice(index, 1);
+
 			ngNotify.set('The product was deleted!', 'success');
+			
 			$timeout(function () {
 				$localstorage.setObject('products', dataHolder.products);
 			}, 2000);

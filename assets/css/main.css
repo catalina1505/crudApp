@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    font-family: 'Questrial';
+    font-family: 'Hind Vadodara', sans-serif;
     font-size: 18px
 }
 
@@ -25,8 +25,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(/assets/images/welcome.jpeg);
-    min-height: 1010px;
+    background-image: url(/assets/images/clothes.jpeg);
+    min-height: 800px;
     height: 100%; 
     flex-direction: column
 }
@@ -38,18 +38,20 @@ img {
     background-color: transparent;
     position: relative;
     padding-top: 0;
-    margin-bottom: 80px
+    margin-bottom: 30px
 }
 
 .welcome-message {
     text-align: center;
     font-size: 40px;
-    margin-bottom: 300px;
-    color: white
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 3px 3px black;
+
 }
 
 .container {
-    background-color: #FEF9FF;
+    background-color: #FBFBFF;
     min-height: 1000px;
     height:100%;
     color: black;
@@ -61,22 +63,17 @@ img {
 }
 
 .btn-negative {
-    background-color: #FCD581;
+    background-color: #FF715B;
     color: white;
 }
 
 .btn-positive {
-    background-color: #C3BABA;
-    color: white;
-}
-
-.btn-sign-in {
-    background-color: #3E6990;
+    background-color: #1EA896;
     color: white;
 }
 
 .btn-background {
-    background-color: #FEF9FF;
+    background-color: #FBFBFF;
 }
 
 .radio-inline {
@@ -96,7 +93,6 @@ img {
     border-bottom: 10px solid black;
     display: inline-block;
 }
-
 
 .arrow-down {
     width: 0;

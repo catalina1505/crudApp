@@ -8,6 +8,7 @@
 			Controller);
 	
 	Controller.$inject = [
+		'$scope',
 		'$state',
 		'$timeout',
 		'dataHolder',
@@ -17,6 +18,7 @@
 	];
 
 	function Controller(
+			$scope,	
 			$state,
 			$timeout,
 			dataHolder,
@@ -29,7 +31,7 @@
 		vm.selected = {};
 		vm.selectProduct = selectProduct;
 		vm.propertyName = 'price';
-		vm.reverse = true;
+		vm.reverse = false;
 		vm.prod = dataHolder.products;
 	
 		function selectProduct(product) {
@@ -46,11 +48,15 @@
 			}, 2000);
 		}
 
-		// still working on sorting
-		vm.sortBy = function(propertyName) {
-			vm.reverse = (vm.propertyName === propertyName) ? !vm.reverse : false;
-			vm.propertyName = propertyName;
-	  	};
+		// sorting products
+		vm.sortBy = function(property) {
+			vm.reverse = (vm.propertyName === property) ? !vm.reverse : false;
+			vm.propertyName = property;
+		  };
+
+		vm.getSortClass = function() {
+			return vm.reverse ? 'arrow-down' : 'arrow-up';
+		  }
 
 		vm.editProd = function (product) {
 			dataHolder.selected = product;

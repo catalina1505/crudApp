@@ -27,6 +27,7 @@
         // find the selected product in dataHolder and update it
         vm.updateProduct = function() {
             var index = vm.prod.findIndex(function(elem){ return elem.code == vm.selected.code})
+            vm.selected.dateNew = new Date();
             ngNotify.set('Edited product was saved!', 'success')
             vm.prod(index) = vm.selected;
             $timeout(function() {

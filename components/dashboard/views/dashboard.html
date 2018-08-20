@@ -29,22 +29,24 @@
 			<th scope="col">Code</th>
 			<th scope="col">Type</th>
 			<th scope="col">Shelf</th>
-			<th scope="col">Gender</th>
-			<th scope="col">Size</th>			
-			<th scope="col"> 
-				<button type="button" ng-click="dashboardCtrl.sortBy('price')">Price</button>
-				<span type="button" class="sortorder" ng-show="propertyName === 'price'" ng-class="{reverse: reverse}"></span>
+			<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('gender')">Gender
+				<div ng-class="dashboardCtrl.getSortClass('gender')"></div>	
 			</th>
-		  	<th scope="col">
-				<button type="button" ng-click="dashboardCtrl.sortBy('quantity')">Quantity</button>
-				<span class="sortorder" ng-show="propertyName === 'quantity'" ng-class="{reverse: reverse}"></span>
-			  </th>
+			<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('size')">Size
+				<div ng-class="dashboardCtrl.getSortClass('size')"></div>	
+			</th>
+			<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('price')">Price
+				<div ng-class="dashboardCtrl.getSortClass('price')"></div>
+			</th>
+		  	<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('quantity')">Quantity
+				<div ng-class="dashboardCtrl.getSortClass('quantity')"></div>
+			</th>
 			<th scope="col">Actions</th>
 		</tr>
 		</thead>
 
 		<tbody>
-		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code} | orderBy:propertyName:reverse">
+		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code} | orderBy:dashboardCtrl.propertyName:dashboardCtrl.reverse">
 		  <th scope="row">{{$index+1}}.</th>
 			<td type="number">{{product.code}}</td>
 			<td>{{product.type}}</td>

@@ -1,18 +1,9 @@
 <!-- form for editing the selected product -->
 <div class = "container">						  
     <form name ="createForm" class="form-horizontal" role="form">
-        
-        <!-- <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Code</label>
-				<div class="col-sm-10">
-                    <input type="number" name ="code" required ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="editCtrl.selected.code">
-                    <span ng-show="createForm.code.$error.pattern">Not a valid number!</span>
-                    <span ng-show="createForm.code.$error.required">Please enter a product code</span>
-				</div>
-        </div> -->
-        
+    
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Type</label>
+            <label class="col-sm-2 col-form-label table-head">Type</label>
 				<div class="col-sm-10">
                     <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.type" value="Simple"> Simple </label>
                     <label class="radio-inline"><input type="radio" ng-model="edittrl.selected.type" value="Message"> Message </label>
@@ -21,7 +12,7 @@
         </div>
         
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Shelf</label>
+            <label class="col-sm-2 col-form-label table-head">Shelf</label>
 				<div class="col-sm-10">
                     <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="A"> A </label> 
                     <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.shelf" value="B"> B </label>
@@ -33,7 +24,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Gender</label>
+            <label class="col-sm-2 col-form-label table-head">Gender</label>
 				<div class="col-sm-10">
                     <label class="radio-inline"><input type="radio" ng-model="edittrl.selected.gender" value="M"> M </label>
                     <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.gender" value="F"> F </label> 				
@@ -41,25 +32,25 @@
         </div>
         
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Size</label>
+            <label class="col-sm-2 col-form-label table-head">Size</label>
 				<div class="col-sm-10">
-                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="XS"> XS </label>
-                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="S"> S </label>
-                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="M"> M </label>
-                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="L"> L </label>
-                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="XL"> XL </label>				
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="32"> 32 </label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="34"> 34 </label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="36"> 36 </label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="38"> 38 </label>
+                    <label class="radio-inline"><input type="radio" ng-model="editCtrl.selected.size" value="40"> 40 </label>				
                 </div>
         </div>
         
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Price</label>
+            <label class="col-sm-2 col-form-label table-head">Price</label>
 				<div class="col-sm-10">
 				    <input type="number" class="form-control" ng-model="editCtrl.selected.price">
 				</div>
         </div>
         
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Quantity</label>
+            <label class="col-sm-2 col-form-label table-head">Quantity</label>
 				<div class="col-sm-10">
                     <input type="number" name="code" ng-pattern="/^[0-9]\d*$/" class="form-control" ng-model="editCtrl.selected.quantity">
                     <span ng-show="createForm.code.$error.pattern">Not a valid number!</span>

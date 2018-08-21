@@ -8,7 +8,6 @@
 			Controller);
 	
 	Controller.$inject = [
-		'$scope',
 		'$state',
 		'$timeout',
 		'dataHolder',
@@ -18,7 +17,6 @@
 	];
 
 	function Controller(
-			$scope,	
 			$state,
 			$timeout,
 			dataHolder,

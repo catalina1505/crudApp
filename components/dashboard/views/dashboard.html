@@ -41,7 +41,7 @@
 		</thead>
 
 		<tbody>
-		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code} | limitTo:dashboardCtrl.pageSize:dashboardCtrl.currentPage*dashboardCCtrl.pageSize | orderBy:dashboardCtrl.propertyName:dashboardCtrl.reverse">
+		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code} | limitTo:dashboardCtrl.pageSize:dashboardCtrl.currentPage*dashboardCtrl.pageSize | orderBy:dashboardCtrl.propertyName:dashboardCtrl.reverse">
 		  <th scope="row">{{$index+1}}.</th>
 			<td type="number">{{product.code}}</td>
 			<td>{{product.type}}</td>

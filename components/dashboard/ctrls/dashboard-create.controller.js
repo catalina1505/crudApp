@@ -28,7 +28,7 @@
         vm.saveProduct = function(){
 		   dataHolder.products.push(vm.newProduct);
 
-		   vm.newProduct.code = Date.now() + Math.random().toString(16).slice(2,5);
+		   vm.newProduct.code = (Date.now() + Math.random().toString(16).slice(2,5)).slice(7);
 		   vm.newProduct.date = new Date();
 
 		   ngNotify.set('You added a new product!', 'success')

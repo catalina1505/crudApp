@@ -15,11 +15,6 @@ input::-webkit-inner-spin-button {
       margin: 0; 
 }
 
-img {
-    height:23px;
-    width:23px
-}
-
 .welcome {
     background-size: cover;
     display: flex;

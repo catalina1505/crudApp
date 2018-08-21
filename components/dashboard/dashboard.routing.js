@@ -7,12 +7,11 @@
         .config(Config);
     
     Config.$inject = [
-        '$stateProvider'
-		
-        ];
+        '$stateProvider'		
+                    ];
     
     function Config($stateProvider) {
-        // routing for dashboard, dashboard create/view/edit - all children of main
+        // routing for dashboard, dashboard create/view/edit
         $stateProvider
             .state('dashboard', {
                 parent: 'main',

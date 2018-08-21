@@ -8,11 +8,11 @@
 					Controller);
     
     Controller.$inject = [
-		'$timeout',
-		'dataHolder',
-		'$localstorage',
-		'ngNotify'
-        ];
+			'$timeout',
+			'dataHolder',
+			'$localstorage',
+			'ngNotify'
+        	];
     
     function Controller(
 			$timeout,

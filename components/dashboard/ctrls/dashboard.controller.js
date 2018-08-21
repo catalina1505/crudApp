@@ -8,21 +8,18 @@
 			Controller);
 	
 	Controller.$inject = [
-		'$state',
-		'$timeout',
-		'dataHolder',
-		'$localstorage',
-		'ngNotify'
-
-	];
-
+			'$state',
+			'$timeout',
+			'dataHolder',
+			'$localstorage',
+			'ngNotify'
+						];
 	function Controller(
 			$state,
 			$timeout,
 			dataHolder,
 			$localstorage,
 			ngNotify
-
 						) 
 	{
 		var vm = this;

@@ -41,8 +41,7 @@ input::-webkit-inner-spin-button {
     font-size: 40px;
     margin-bottom: 50px;
     color: white;
-    text-shadow: 3px 3px black;
-
+    text-shadow: 3px 3px black
 }
 
 .container {
@@ -50,34 +49,34 @@ input::-webkit-inner-spin-button {
     min-height: 1000px;
     height:100%;
     color: black;
-    padding: 20px 30px;
+    padding: 20px 30px
 }
 
 .table-head {
-    font-weight: 600;
+    font-weight: 600
 }
 
 .btn-negative {
     background-color: #FF715B;
-    color: white;
+    color: white
 }
 
 .btn-positive {
     background-color: #1EA896;
-    color: white;
+    color: white
 }
 
 .btn-background {
-    background-color: #FBFBFF;
+    background-color: #FBFBFF
 }
 
 .radio-inline {
-    padding: 7px;
+    padding: 7px
 }
 
 .btn:hover {
     cursor: pointer;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
 }
 
 .arrow-up {
@@ -86,7 +85,7 @@ input::-webkit-inner-spin-button {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 10px solid black;
-    display: inline-block;
+    display: inline-block
 }
 
 .arrow-down {
@@ -95,9 +94,9 @@ input::-webkit-inner-spin-button {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 10px solid black;
-    display: inline-block;
+    display: inline-block
 }
 
 .sortProduct {
-    cursor: pointer;
+    cursor: pointer
 }

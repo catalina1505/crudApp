@@ -36,6 +36,7 @@
 		vm.currentPage = 0;
 		vm.pageSize = 10;
 
+		// pagination
 		vm.numberOfPages=function(){
 			return Math.ceil(vm.prod.length/vm.pageSize);                
 		}

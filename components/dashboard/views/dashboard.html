@@ -45,7 +45,7 @@
 		</thead>
 
 		<tbody>
-		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code} | orderBy:dashboardCtrl.propertyName:dashboardCtrl.reverse">
+		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code} | limitTo:pageSize:currentPage*pageSize |orderBy:dashboardCtrl.propertyName:dashboardCtrl.reverse">
 		  <th scope="row">{{$index+1}}.</th>
 			<td type="number">{{product.code}}</td>
 			<td>{{product.type}}</td>
@@ -60,6 +60,16 @@
 		</tr>
 		</tbody>
 	</table>
+
+<div>
+	<button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+</div>
 
 <!--Delete Modal start-->
 <div class="modal fade" id="myModalDelete" role="dialog">

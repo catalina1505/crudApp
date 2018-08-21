@@ -33,7 +33,13 @@
 		vm.propertyName = 'price';
 		vm.reverse = false;
 		vm.prod = dataHolder.products;
-	
+		vm.currentPage = 0;
+		vm.pageSize = 10;
+
+		vm.numberOfPages=function(){
+			return Math.ceil(vm.prod.length/vm.pageSize);                
+		}
+
 		function selectProduct(product) {
 			vm.selected = product;
 		}

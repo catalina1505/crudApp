@@ -35,7 +35,7 @@
 
 		   $timeout(function() {
 				$localstorage.setObject('products', dataHolder.products);
-			}, 1000);
+			}, 500);
 
 			vm.newProduct = {};
 

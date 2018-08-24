@@ -24,8 +24,17 @@
         vm.selected = dataHolder.selected;
         vm.prod = dataHolder.products;
 
+        function init() {
+            $timeout(function() {
+            return vm.selected = $localstorage.getObject('products');
+           }, 500);
+        }
+        init();
+
+
         // find the selected product in dataHolder and update it
         vm.updateProduct = function() {
+
             var index = vm.prod.findIndex(function(elem){ return elem.code == vm.selected.code})
 
             vm.selected.dateNew = new Date();
@@ -34,9 +43,7 @@
 
             vm.prod(index) = vm.selected;
             
-            $timeout(function() {
-                return $localstorage.setObject('products', dataHolder.products);
-            }, 2000);
+
         };
     } 
 })();

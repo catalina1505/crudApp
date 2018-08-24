@@ -30,9 +30,14 @@
 		vm.prod = dataHolder.products;
 		vm.currentPage = 0;
 		vm.pageSize = 10;
-		vm.liked = true;
 
-
+		function init() {
+			 $timeout(function() {
+			 return vm.prod = $localstorage.getObject('products');
+			}, 500);
+		 }
+		 init();
+		
 		// pagination
 		vm.numberOfPages=function(){
 			return Math.ceil(vm.prod.length/vm.pageSize);                
@@ -51,14 +56,13 @@
 			
 			$timeout(function () {
 				$localstorage.setObject('products', dataHolder.products);
-			}, 1000);
+			}, 500);
 		}
 
 		// sorting products
 		vm.sortBy = function(property) {
 			vm.reverse = (vm.propertyName === property) ? !vm.reverse : false;
-			vm.propertyName = property;
-			
+			vm.propertyName = property;		
 		  }
 
 		vm.getSortClass = function(property) {

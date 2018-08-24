@@ -30,6 +30,8 @@
 		vm.prod = dataHolder.products;
 		vm.currentPage = 0;
 		vm.pageSize = 10;
+		vm.liked = true;
+
 
 		// pagination
 		vm.numberOfPages=function(){
@@ -49,17 +51,18 @@
 			
 			$timeout(function () {
 				$localstorage.setObject('products', dataHolder.products);
-			}, 2000);
+			}, 1000);
 		}
 
 		// sorting products
 		vm.sortBy = function(property) {
 			vm.reverse = (vm.propertyName === property) ? !vm.reverse : false;
 			vm.propertyName = property;
-		  };
+			
+		  }
 
-		vm.getSortClass = function() {
-			return vm.reverse ? 'arrow-down' : 'arrow-up';
+		vm.getSortClass = function(property) {
+			return (vm.reverse && vm.propertyName === property) ? 'arrow-down' : 'arrow-up';
 		  }
 
 		vm.editProd = function (product) {

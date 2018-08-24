@@ -25,15 +25,19 @@
 			<th scope="col">Code</th>
 			<th scope="col">Type</th>
 			<th scope="col">Shelf</th>
-			<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('gender')">Gender
+
+			<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('gender')">Gender 
 				<div ng-class="dashboardCtrl.getSortClass('gender')"></div>	
 			</th>
+
 			<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('size')">Size
 				<div ng-class="dashboardCtrl.getSortClass('size')"></div>	
 			</th>
+
 			<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('price')">Price
 				<div ng-class="dashboardCtrl.getSortClass('price')"></div>
 			</th>
+
 		  	<th class="sortProduct" scope="col" ng-click="dashboardCtrl.sortBy('quantity')">Quantity
 				<div ng-class="dashboardCtrl.getSortClass('quantity')"></div>
 			</th>

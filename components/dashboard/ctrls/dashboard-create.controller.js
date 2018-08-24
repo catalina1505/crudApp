@@ -34,8 +34,8 @@
 		   ngNotify.set('You added a new product!', 'success')
 
 		   $timeout(function() {
-				return $localstorage.setObject('products', dataHolder.products);
-			}, 2000);
+				$localstorage.setObject('products', dataHolder.products);
+			}, 1000);
 
 			vm.newProduct = {};
 

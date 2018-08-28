@@ -30,7 +30,10 @@
 
             vm.selected.dateNew = new Date();
 
-            ngNotify.set('Edited product was saved!', 'success')
+            ngNotify.set('Edited product was saved!', 'success', {
+                position: 'top',
+                duration: '1000'
+            })
 
             vm.prod(index) = vm.selected;
             

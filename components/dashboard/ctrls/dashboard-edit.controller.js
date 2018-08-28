@@ -24,14 +24,6 @@
         vm.selected = dataHolder.selected;
         vm.prod = dataHolder.products;
 
-        function init() {
-            $timeout(function() {
-            return vm.selected = $localstorage.getObject('products');
-           }, 500);
-        }
-        init();
-
-
         // find the selected product in dataHolder and update it
         vm.updateProduct = function() {
 
@@ -41,9 +33,11 @@
 
             ngNotify.set('Edited product was saved!', 'success')
 
-            vm.prod(index) = vm.selected;
-            
+            vm.prod(index) = vm.selected;   
 
+            $timeout(function() {
+                return $localstorage.setObject('products', vm.prod);
+            }, 2000);
         };
     } 
 })();

@@ -4,7 +4,6 @@
     
     angular
         .module('dashboardModule', ['ngNotify',
-                                    'ngPrint',
-                                    'ngMessages'
+                                    'ngPrint'
                                     ]);
 })();

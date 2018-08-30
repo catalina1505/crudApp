@@ -30,7 +30,6 @@
 		vm.prod = dataHolder.products;
 		vm.currentPage = 0;
 		vm.pageSize = 10;
-		vm.liked = true;
 
 
 		// pagination

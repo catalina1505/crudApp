@@ -21,4 +21,4 @@
         vm.selected = dataHolder.selected;
         vm.date = new Date();
         }   
-})();
+})()

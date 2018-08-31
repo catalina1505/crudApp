@@ -1,3 +1,4 @@
+
 (function() {
     
 	"use strict";
@@ -26,19 +27,17 @@
 
         // find the selected product in dataHolder and update it
         vm.updateProduct = function() {
-            var index = vm.prod.findIndex(function(elem){ return elem.code == vm.selected.code});
+
+            var index = vm.prod.findIndex(function(elem){ return elem.code == vm.selected.code})
 
             vm.selected.dateNew = new Date();
 
-            ngNotify.set('Edited product was saved!', 'success', {
-                position: 'top',
-                duration: '1000'
-            })
+            ngNotify.set('Edited product was saved!', 'success')
 
-            vm.prod[index] = vm.selected;
-            
+            vm.prod(index) = vm.selected;   
+
             $timeout(function() {
-                return $localstorage.setObject('products', dataHolder.products);
+                return $localstorage.setObject('products', vm.prod);
             }, 2000);
         };
     } 

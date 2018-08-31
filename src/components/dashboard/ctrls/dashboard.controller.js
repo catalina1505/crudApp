@@ -30,8 +30,13 @@
 		vm.prod = dataHolder.products;
 		vm.currentPage = 0;
 		vm.pageSize = 10;
-		vm.liked = true;
 
+		function init() {
+			$timeout(function() {
+			return vm.prod = $localstorage.getObject('products');
+		   }, 500);
+		}
+		init();
 
 		// pagination
 		vm.numberOfPages=function(){
@@ -51,7 +56,7 @@
 			
 			$timeout(function () {
 				$localstorage.setObject('products', dataHolder.products);
-			}, 1000);
+			}, 500);
 		}
 
 		// sorting products

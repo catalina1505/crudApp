@@ -8,4 +8,5 @@ Tech:
 -AngularJS
 
 Installation:
--https://help.github.com/articles/cloning-a-repository/
+- Clone: https://help.github.com/articles/cloning-a-repository/
+- Run: npm install + npm start

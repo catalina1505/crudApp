@@ -54,9 +54,9 @@
 
 			ngNotify.set('The product was deleted!', 'success');
 			
-			$timeout(function () {
-				$localstorage.setObject('products', dataHolder.products);
-			}, 500);
+			// $timeout(function () {
+			// 	$localstorage.setObject('products', dataHolder.products);
+			// }, 500);
 		}
 
 		// sorting products

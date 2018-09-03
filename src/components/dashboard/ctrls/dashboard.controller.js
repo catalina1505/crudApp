@@ -12,14 +12,16 @@
 			'$timeout',
 			'dataHolder',
 			'$localstorage',
-			'ngNotify'
+			'ngNotify',
+			'$httpMock'
 						];
 	function Controller(
 			$state,
 			$timeout,
 			dataHolder,
 			$localstorage,
-			ngNotify
+			ngNotify,
+			$httpMock
 						) 
 	{
 		var vm = this;
@@ -32,9 +34,10 @@
 		vm.pageSize = 10;
 
 		function init() {
-			$timeout(function() {
-			return vm.prod = $localstorage.getObject('products');
-		   }, 500);
+			return vm.prod = $httpMock.get('products');
+		// 	$timeout(function() {
+		// 	return vm.prod = $localstorage.getObject('products');
+		//    }, 500);
 		}
 		init();
 

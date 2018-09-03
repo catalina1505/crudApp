@@ -8,11 +8,13 @@
                         Controller);
     
         Controller.$inject = [
-                'dataHolder'
+                'dataHolder',
+                '$httpMock'
                                 ];
     
         function Controller(
-                dataHolder                
+                dataHolder,
+                $httpMock              
                         ) 
         {
         var vm = this;

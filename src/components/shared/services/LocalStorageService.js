@@ -1,10 +1,10 @@
 (function () {
 
-    'use strict';
+  'use strict';
 
-    angular
-        .module('appModule')
-        .factory('$localstorage', Factory);
+  angular
+    .module('appModule')
+    .factory('$localstorage', Factory);
         
     Factory.$inject = ['$window'];
 

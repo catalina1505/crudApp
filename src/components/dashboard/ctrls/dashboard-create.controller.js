@@ -11,14 +11,16 @@
 			'$timeout',
 			'dataHolder',
 			'$localstorage',
-			'ngNotify'
+			'ngNotify',
+			'$httpMock'
         	];
     
     function Controller(
 			$timeout,
 			dataHolder,
 			$localstorage,
-			ngNotify
+			ngNotify,
+			$httpMock
 						) 
 	{
 		var vm = this;

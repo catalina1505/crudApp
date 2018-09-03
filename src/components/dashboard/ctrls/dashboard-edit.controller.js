@@ -11,13 +11,15 @@
     Controller.$inject = [
             'dataHolder',
             '$localstorage',
-            'ngNotify'
+            'ngNotify',
+            '$httpMock'
         ];
     
     function Controller (
             dataHolder,
             $localstorage,
-            ngNotify
+            ngNotify,
+            $httpMock
         )   
     {
         var vm = this;

@@ -4,7 +4,7 @@
 
     angular
         .module('appModule')
-        .service('dataHolder' , function(){
+        .service('dataHolder', function(){
             
             // keeping all the products in an array
             this.products = [];

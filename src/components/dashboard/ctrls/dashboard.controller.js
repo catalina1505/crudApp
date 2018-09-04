@@ -9,19 +9,15 @@
 	
 	Controller.$inject = [
 			'$state',
-			'$timeout',
 			'dataHolder',
-			'$localstorage',
 			'ngNotify',
-			'$httpMock'
+			'httpMock'
 						];
 	function Controller(
 			$state,
-			$timeout,
 			dataHolder,
-			$localstorage,
 			ngNotify,
-			$httpMock
+			httpMock
 						) 
 	{
 		var vm = this;
@@ -34,10 +30,13 @@
 		vm.pageSize = 10;
 
 		function init() {
-			return vm.prod = $httpMock.get('products');
-		// 	$timeout(function() {
-		// 	return vm.prod = $localstorage.getObject('products');
-		//    }, 500);
+		httpMock
+			.get('products')
+			.then(function (products) {
+				vm.prod = products;
+		}, function () {
+			ngNotify.set('The application doesn\'t work', 'error');
+		});
 		}
 		init();
 
@@ -52,14 +51,19 @@
 
 		// delete a product from dataHolder
 		vm.deleteProduct = function () {
-			var index = vm.prod.findIndex(function (elem) { return elem.code == vm.selected.code })
+			var index = vm.prod.findIndex(function (item) { return item.code == vm.selected.code })
 			vm.prod.splice(index, 1);
 
-			ngNotify.set('The product was deleted!', 'success');
-			
-			// $timeout(function () {
-			// 	$localstorage.setObject('products', dataHolder.products);
-			// }, 500);
+			function remove() {
+				httpMock
+					.setObj('products', vm.prod)
+					.then(function () {
+						ngNotify.set('The product was deleted!', 'success');
+					}, function () {
+					ngNotify.set('The product wasn\'t deleted!', 'error');
+				});
+				}
+				remove();
 		}
 
 		// sorting products

@@ -9,12 +9,12 @@
     
         Controller.$inject = [
                 'dataHolder',
-                '$httpMock'
+                'httpMock'
                                 ];
     
         function Controller(
                 dataHolder,
-                $httpMock              
+                httpMock              
                         ) 
         {
         var vm = this;

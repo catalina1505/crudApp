@@ -28,6 +28,8 @@
 		vm.prod = dataHolder.products;
 		vm.currentPage = 0;
 		vm.pageSize = 10;
+		vm.viewProd = viewProd;
+		vm.editProd = editProd;
 
 		function init() {
 		httpMock
@@ -77,14 +79,14 @@
 			return (vm.reverse && vm.propertyName === property) ? 'arrow-down' : 'arrow-up';
 		  }
 
-		vm.editProd = function (product) {
+		function editProd(product) {
 			dataHolder.selected = product;
-			$state.go('edit');
+			$state.go('edit', {id: product.code});
 		}
 
-		vm.viewProd = function (product) {
+		function viewProd(product) {
 			dataHolder.selected = product;
-			$state.go('view');
+			$state.go('view', {id: product.code});
 		}		
 	}
 })();

@@ -27,6 +27,7 @@
         vm.selected = dataHolder.selected;
         vm.prod = dataHolder.products;
         
+        
         // find the selected product and update it
         function edit() {
             if (!dataHolder.selected) {

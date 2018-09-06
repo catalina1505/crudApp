@@ -9,31 +9,36 @@
     
         Controller.$inject = [
                 'dataHolder',
+                '$localstorage',
                 '$state',
                 'httpMock',
                 '$stateParams'
+                
                                 ];
     
         function Controller(
                 dataHolder,
+                $localstorage,
                 $state,
                 httpMock,
                 $stateParams             
                         ) 
         {
         var vm = this;
-        vm.selected = dataHolder.selected;
         vm.view = view;
 
         function view() {
-                    httpMock
-                    .get($stateParams.id)
-                    .then(function(response) {
-                        vm.product = response;
-                    }, function () {
-                        ngNotify.set('You didn\'t selected a product', 'error');
-                    });
-             }
+            httpMock
+            .getProducts()
+            .then(function(response) {
+                var product = $localstorage.getObject('product');
+                var index = product.findIndex(function (item) { return item.code === product.code })
+                vm.selected = response[index];
+
+            }, function () {
+                ngNotify.set('You didn\'t select a product', 'error');
+            });
+        }
             view();
 
         vm.date = new Date();

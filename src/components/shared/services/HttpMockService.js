@@ -17,9 +17,9 @@
                 $localstorage.setObject(key, value);
                 }, 1000)},
 
-            get: function(key) {
+            getProducts: function() {
                 return $timeout(function() {
-                return $localstorage.getObject(key, []);
+                return $localstorage.getObject('products', []);
             }, 1000)},
 
             delete: function(key){

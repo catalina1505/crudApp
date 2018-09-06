@@ -33,7 +33,7 @@
 
 		function init() {
 		httpMock
-			.get('products')
+			.getProducts()
 			.then(function (products) {
 				vm.prod = products;
 		}, function () {

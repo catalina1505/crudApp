@@ -31,10 +31,15 @@
             httpMock
             .getProducts()
             .then(function(response) {
-                var product = $localstorage.getObject('product');
-                var index = product.findIndex(function (item) { return item.code === product.code })
-                vm.selected = response[index];
-
+                vm.selected = null;
+                for (var i = 0; i < response.length ; i++){
+                   // if(response[i].code === vm.selected) {
+                   //     return response[i];
+                   // }
+                    vm.selected = response[i];
+                    
+                console.log(i);
+                }
             }, function () {
                 ngNotify.set('You didn\'t select a product', 'error');
             });

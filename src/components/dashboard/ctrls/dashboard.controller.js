@@ -44,17 +44,23 @@
 
 		// pagination
 		vm.numberOfPages = function(){
-			return Math.ceil(vm.prod.length /vm.pageSize);                
+			return Math.ceil(vm.prod.length/vm.pageSize);                
 		}
 
 		function selectProduct(product) {
 			vm.selected = product;
 		}
 
+		vm.random = function() {
+			vm.pageSize * vm.currentPage;
+		}
 		// delete a product
 		vm.deleteProduct = function () {
 			var index = vm.prod.findIndex(function (item) { return item.code == vm.selected.code })
 			vm.prod.splice(index, 1);
+			if(vm.random > vm.prod.length) {
+				currentPage = 0;
+			}
 
 			function remove() {
 				httpMock

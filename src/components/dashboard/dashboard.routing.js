@@ -37,7 +37,7 @@
             
             .state('edit', {
                 parent: 'main',
-                url: '/edit/:id',
+                url: '/edit/:code',
                 views: {
                     'content@': {
                         templateUrl: 'components/dashboard/views/dashboard-edit.html',
@@ -48,7 +48,7 @@
             
             .state('view', {
                 parent: 'main',
-                url: '/view/:id',
+                url: '/view/:code',
                 views: {
                     'content@': {
                         templateUrl: 'components/dashboard/views/dashboard-view.html',

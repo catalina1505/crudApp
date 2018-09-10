@@ -30,20 +30,19 @@
         
         // find the selected product and update it
         function edit() {
-            if (!dataHolder.selected) {
-                httpMock
-                .get($stateParams.id)
-                .then(function(response) {
-                    vm.product = response;
-                }, function () {
-                    ngNotify.set('Please select a product', 'error');
-                });
-            } else {
-                vm.product = dataHolder.selected;
-            }
-            }
+            httpMock
+            .getProducts()
+            .then(function(response) {
+                for (var i = 0; i < response.length ; i++){
+                    if(response[i].code == $stateParams.code) {
+                        vm.selected = response[i];
+                    }
+                }
+            }, function () {
+                ngNotify.set('You didn\'t select a product', 'error');
+            });
+        }        
         edit();
-
 
         vm.updateProduct = function() {
             var index = vm.prod.findIndex(function(item){ return item.code == vm.selected.code});
@@ -56,7 +55,6 @@
                     }, function () {
                     ngNotify.set('The product couldn\'t be edited', 'error');
                 });
-            
             vm.prod[index] = vm.selected;   
         };
     } 

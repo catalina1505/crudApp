@@ -27,7 +27,7 @@
 		vm.reverse = false;
 		vm.prod = dataHolder.products;
 		vm.currentPage = 0;
-		vm.pageSize = 10;
+		vm.pageSize = 5;
 		vm.viewProd = viewProd;
 		vm.editProd = editProd;
 
@@ -43,15 +43,15 @@
 		init();
 
 		// pagination
-		vm.numberOfPages=function(){
-			return Math.ceil(vm.prod.length/vm.pageSize);                
+		vm.numberOfPages = function(){
+			return Math.ceil(vm.prod.length /vm.pageSize);                
 		}
 
 		function selectProduct(product) {
 			vm.selected = product;
 		}
 
-		// delete a product from dataHolder
+		// delete a product
 		vm.deleteProduct = function () {
 			var index = vm.prod.findIndex(function (item) { return item.code == vm.selected.code })
 			vm.prod.splice(index, 1);
@@ -71,8 +71,7 @@
 		// sorting products
 		vm.sortBy = function(property) {
 			vm.reverse = (vm.propertyName === property) ? !vm.reverse : false;
-			vm.propertyName = property;
-			
+			vm.propertyName = property;	
 		  }
 
 		vm.getSortClass = function(property) {
@@ -81,12 +80,12 @@
 
 		function editProd(product) {
 			dataHolder.selected = product;
-			$state.go('edit', {id: product.code});
+			$state.go('edit', {code: product.code});
 		}
 
 		function viewProd(product) {
 			dataHolder.selected = product;
-			$state.go('view', {id: product.code});
+			$state.go('view', {code: product.code});
 		}		
 	}
 })();

@@ -77,7 +77,11 @@
                 jsConcat: {
                     src: ['src/scripts/*.min.js', 'src/scripts/*.min.js.map', '**/*.module.js', '**/*.routing.js', '**/*.controller.js', '**/*.service.js'],
                     dest: 'dist/built.js'
-            }  
+            },
+                 cssConcat: {
+                     src: ['src/styles/*.min.css', 'src/styles/*.min.css.map', 'src/assets/css/main.css'],
+                     dest: 'dist/styles.css'
+                 }
             },
 
             //Minification
@@ -89,8 +93,8 @@
                 jsToDistMin: {
                     files: [{
                         expand: true,
-                        cwd: 'src/',
-                        src: 'dist/built.js',
+                        cwd: 'dist/',
+                        src: 'built.js',
                         dest: 'dist/built.min.js'
                     }]
                 }
@@ -100,9 +104,9 @@
                 cssToDistMin: {
                     files: [{
                         expand: true,
-                        cwd: 'src/',
-                        src: '**/*.css',
-                        dest: 'dist/'
+                        cwd: 'dist/',
+                        src: 'styles.css',
+                        dest: 'dist/built.min.css'
                     }]
                 }
                 },

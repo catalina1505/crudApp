@@ -10,3 +10,7 @@ Tech:
 Installation:
 - Clone: https://help.github.com/articles/cloning-a-repository/
 - Run: npm install + npm run dev (for development) or npm run prod (for production)
+
+Credentials:
+- email: catalina@gmail.com
+- password: password

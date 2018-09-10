@@ -14,3 +14,14 @@ Installation:
 Login credentials:
 - email: catalina@gmail.com
 - password: password
+
+Features:
+- login;
+- add new product;
+- edit product;
+- view product;
+- delete product;
+- search product;
+- sort products;
+- pagination;
+- print table.

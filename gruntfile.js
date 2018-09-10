@@ -75,7 +75,7 @@
                     separator: ';',
                 },
                 jsConcat: {
-                    src: ['src/scripts/*.min.js', 'src/scripts/*.min.js.map', 'dist/built.min.js'],
+                    src: ['src/scripts/*.min.js', 'src/scripts/*.min.js.map', '**/*.module.js', '**/*.routing.js', '**/*.controller.js', '**/*.service.js'],
                     dest: 'dist/built.js'
             }  
             },
@@ -90,7 +90,7 @@
                     files: [{
                         expand: true,
                         cwd: 'src/',
-                        src: ['**/*.module.js', '**/*.routing.js', '**/*.controller.js', '**/*.service.js'],
+                        src: 'dist/built.js',
                         dest: 'dist/built.min.js'
                     }]
                 }

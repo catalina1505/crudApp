@@ -30,6 +30,11 @@
 		vm.pageSize = 5;
 		vm.viewProd = viewProd;
 		vm.editProd = editProd;
+		vm.submit = submit;
+
+		function submit() {
+			$state.go('welcome');
+		}
 
 		function init() {
 		httpMock

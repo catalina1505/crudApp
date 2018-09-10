@@ -11,46 +11,7 @@
 
         grunt.initConfig({
             pkg: grunt.file.readJSON('package.json'),
-            //Minification
-            uglify: {
-                options: {
-                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
-                },
-                jsToDistMin: {
-                    files: [{
-                        expand: true,
-                        cwd: 'src/',
-                        src: '**/*.js',
-                        dest: 'dist/'
-                    }]
-                }
-                },
-    
-            cssmin: {
-                cssToDistMin: {
-                    files: [{
-                        expand: true,
-                        cwd: 'src/',
-                        src: '**/*.css',
-                        dest: 'dist/'
-                    }]
-                }
-                },
 
-            htmlmin: {
-                htmlToDistMin: {
-                    options: {                                
-                        collapseWhitespace: true,
-                        removeComments: true
-                    },
-                    files: [{
-                        expand: true,
-                        cwd: 'src/',
-                        src: '**/*.html',
-                        dest: 'dist/'
-                    }]
-                }
-                }, 
             //Copy files from node-modules to scripts
             copy: {
                 cssNpmToStyles: {
@@ -105,15 +66,73 @@
                         dest: scriptsDirectory
                     }
                 ]
-                }
-                }    
-            })
+                }   
+            },
 
+            //Concatenation
+            concat: {
+                options: {
+                    separator: ';',
+                },
+                jsConcat: {
+                    src: ['src/scripts/*.min.js', 'src/scripts/*.min.js.map', '**/*.module.js', '**/*.routing.js', '**/*.controller.js', '**/*.service.js'],
+                    dest: 'dist/built.js'
+            },
+                 cssConcat: {
+                     src: ['src/styles/*.min.css', 'src/styles/*.min.css.map', 'src/assets/css/main.css'],
+                     dest: 'dist/styles.css'
+                 }
+            },
+
+            //Minification
+            uglify: {
+                options: {
+                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
+                separator: ';'
+                },
+                jsToDistMin: {
+                    files: [{
+                        expand: true,
+                        cwd: 'dist/',
+                        src: 'built.js',
+                        dest: 'dist/built.min.js'
+                    }]
+                }
+                },
+    
+            cssmin: {
+                cssToDistMin: {
+                    files: [{
+                        expand: true,
+                        cwd: 'dist/',
+                        src: 'styles.css',
+                        dest: 'dist/built.min.css'
+                    }]
+                }
+                },
+
+            htmlmin: {
+                htmlToDistMin: {
+                    options: {                                
+                        collapseWhitespace: true,
+                        removeComments: true
+                    },
+                    files: [{
+                        expand: true,
+                        cwd: 'src/',
+                        src: 'index.html',
+                        dest: 'dist/'
+                    }]
+                }
+                } 
+            })
+            
             grunt.registerTask('default', [
                 'dev'
             ]);
 
             grunt.registerTask('dev', [
+                'concat:jsConcat',
                 'uglify:jsToDistMin',
                 'cssmin:cssToDistMin',
                 'htmlmin:htmlToDistMin',
@@ -121,6 +140,7 @@
                 'copy:cssNpmToStyles',
             ]);
 
+            grunt.loadNpmTasks('grunt-contrib-concat');
             grunt.loadNpmTasks('grunt-contrib-uglify');
             grunt.loadNpmTasks('grunt-contrib-cssmin');
             grunt.loadNpmTasks('grunt-contrib-htmlmin');

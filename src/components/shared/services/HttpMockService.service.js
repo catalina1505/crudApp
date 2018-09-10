@@ -22,6 +22,16 @@
                 return $localstorage.getObject('products', []);
             }, 1000)},
 
+            set: function(key, value) {
+                return $timeout( function() {
+                $localstorage.set(key, value);
+                }, 1000)},
+
+            get: function(key, defaultValue) {
+                return $timeout( function() {
+                $localstorage.get(key, defaultValue);
+                }, 1000)},
+
             delete: function(key){
                 return $timeout(function() {
                 $localStorage.removeItem(key);

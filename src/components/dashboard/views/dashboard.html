@@ -21,7 +21,7 @@
 	<table class="table" id="print">
 		<thead>
 		<tr>
-			<th scope="col">ID</th>
+			<!-- <th scope="col">ID</th> -->
 			<th scope="col">Code</th>
 			<th scope="col">Type</th>
 			<th scope="col">Shelf</th>
@@ -45,8 +45,9 @@
 		</thead>
 
 		<tbody>
-		<tr ng-repeat= "product in dashboardCtrl.prod | filter:{'code' : filterSearch.code} | limitTo:dashboardCtrl.pageSize:dashboardCtrl.currentPage*dashboardCtrl.pageSize | orderBy:dashboardCtrl.propertyName:dashboardCtrl.reverse">
-		  <th scope="row">{{$index+1}}</th>
+		<tr ng-repeat= "product in dashboardCtrl.prod[dashboardCtrl.currentPage] | filter:{'code' : filterSearch.code} | orderBy:dashboardCtrl.propertyName:dashboardCtrl.reverse">
+			<!-- limitTo:dashboardCtrl.pageSize:dashboardCtrl.currentPage*dashboardCtrl.pageSize -->
+			<!-- <th scope="row">{{$index+1}}</th> -->
 			<td type="number">{{product.code}}</td>
 			<td>{{product.type}}</td>
 			<td>{{product.shelf}}</td>
@@ -61,10 +62,30 @@
 			</td>
 		</tr>
 		</tbody>
+
+		<tfoot>
+			<td colspan="6">
+				<div class="pagination pull-right">
+					<ul>
+						<li ng-class="{disabled: dashboardCtrl.currentPage == 0}">
+							<a href ng-click="dashboardCtrl.prevPage()">« Prev</a>
+						</li>
+						<li ng-repeat="n in range(dashboardCtrl.pagedItems.length)"
+							ng-class="{active: n == dashboardCtrl.currentPage}"
+						ng-click="dashboardCtrl.setPage()">
+							<a href ng-bind="n + 1">1</a>
+						</li>
+						<li ng-class="{disabled: dashboardCtrl.currentPage == dashboardCtrl.pagedItems.length - 1}">
+							<a href ng-click="dashboardCtrl.nextPage()">Next »</a>
+						</li>
+					</ul>
+				</div>
+			</td>
+		</tfoot>
 	</table>
 
 <!-- Pagination -->
-<div>
+<!-- <div>
 	<button class="btn btn-background" ng-disabled="dashboardCtrl.currentPage == 0" ng-click="dashboardCtrl.currentPage=dashboardCtrl.currentPage-1">
 		<i class="fa fa-arrow-left" aria-hidden="true"></i>
     </button>
@@ -72,7 +93,10 @@
     <button class="btn btn-background" ng-disabled="dashboardCtrl.currentPage >= dashboardCtrl.prod.length/dashboardCtrl.pageSize - 1" ng-click="dashboardCtrl.currentPage=dashboardCtrl.currentPage+1">
 		<i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
-</div>
+</div> -->
+
+
+
 
 <!--Delete Modal start-->
 <div class="modal fade" id="myModalDelete" role="dialog">

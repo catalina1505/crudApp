@@ -72,7 +72,7 @@
             //Concatenation
             concat: {
                 options: {
-                    separator: ';',
+                    sourceMap: true
                 },
                 jsConcat: {
                     src: ['src/scripts/*.min.js', 'src/scripts/*.min.js.map', '**/*.module.js', '**/*.routing.js', '**/*.controller.js', '**/*.service.js'],
@@ -86,10 +86,6 @@
 
             //Minification
             uglify: {
-                options: {
-                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
-                separator: ';'
-                },
                 jsToDistMin: {
                     files: [{
                         expand: true,
@@ -106,7 +102,7 @@
                         expand: true,
                         cwd: 'dist/',
                         src: 'styles.css',
-                        dest: 'dist/built.min.css'
+                        dest: 'dist/styles.min.css'
                     }]
                 }
                 },

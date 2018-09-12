@@ -5,6 +5,5 @@
         .module('appModule', [
                 'ui.router',
                 'dashboardModule',
-                'welcomeModule'
-                                ]);
+                'welcomeModule']);
 })();

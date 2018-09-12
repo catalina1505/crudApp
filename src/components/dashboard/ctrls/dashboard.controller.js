@@ -31,10 +31,6 @@
 		vm.viewProd = viewProd;
 		vm.editProd = editProd;
 		vm.submit = submit;
-		vm.pagedItems = [];
-		vm.filteredItems = {};
-		vm.itemsPerPage = 5;
-		vm.groupedItems = [];
 
 		function submit() {
 			$state.go('welcome');
@@ -52,53 +48,9 @@
 		init();
 
 		// pagination
-		// vm.numberOfPages = function(){
-		// 	return Math.ceil(vm.prod.length /vm.pageSize);                
-		// }
-
-// calculate page in place
-    vm.groupToPages = function () {
-        vm.pagedItems = [];
-        
-        for (var i = 0; i < vm.filteredItems.length; i++) {
-            if (i % vm.itemsPerPage === 0) {
-                vm.pagedItems[Math.floor(i / vm.itemsPerPage)] = [ vm.filteredItems[i] ];
-            } else {
-                vm.pagedItems[Math.floor(i / vm.itemsPerPage)].push(vm.filteredItems[i]);
-            }
-        }
-    };
-    
-    vm.range = function (start, end) {
-        var ret = [];
-        if (!end) {
-            end = start;
-            start = 0;
-        }
-        for (var i = start; i < end; i++) {
-            ret.push(i);
-        }
-        return ret;
-    };
-    
-    vm.prevPage = function () {
-        if (vm.currentPage > 0) {
-            vm.currentPage--;
-        }
-    };
-    
-    vm.nextPage = function () {
-        if (vm.currentPage <vm.pagedItems.length - 1) {
-            vm.currentPage++;
-        }
-    };
-    
-    vm.setPage = function () {
-        vm.currentPage = this.n;
-    };
-
-
-
+		vm.numberOfPages = function(){
+			return Math.ceil(vm.prod.length / vm.pageSize);                
+		}
 
 		function selectProduct(product) {
 			vm.selected = product;

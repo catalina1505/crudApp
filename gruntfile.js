@@ -72,11 +72,11 @@
             //Concatenation
             concat: {               
                 jsConcat: {
-                    src: ['src/scripts/jquery.min.js', 'src/scripts/bootstrap.min.js', 'src/scripts/angular.min.js', 'src/**/*.module.js', 'src/**/*.service.js', 'src/**/*.routing.js', 'src/**/*.controller.js'],
+                    src: ['src/scripts/jquery.min.js', 'src/scripts/bootstrap.min.js', 'src/scripts/angular.min.js', 'src/scripts/angular-ui-router.min.js', 'src/scripts/ng-notify.min.js','src/scripts/ngPrint.min.js', 'src/scripts/tether.min.js','src/**/*.module.js', 'src/**/*.service.js', 'src/**/*.routing.js', 'src/components/welcome/ctrls/welcome.controller.js', 'src/components/dashboard/ctrls/dashboard.controller.js','src/**/*.controller.js'],
                     dest: 'dist/built.js'
             },
                  cssConcat: {
-                     src: ['src/styles/bootstrap.min.css', 'src/styles/tether.min.css','src/styles/ng-notify.min.css', 'src/styles/ngPrint.min.css', 'src/assets/main.css'],
+                     src: ['src/styles/bootstrap.min.css', 'src/styles/tether.min.css','src/styles/ng-notify.min.css', 'src/styles/ngPrint.min.css', 'src/assets/css/main.css'],
                      dest: 'dist/styles.css'
                 }
             },
@@ -88,8 +88,7 @@
                         mangle:true
                     },
                     files: [{
-                        cwd: 'dist/',
-                        src: 'built.js',
+                        src: 'dist/built.js',
                         dest: 'dist/built.min.js'
                     }]
                 }
@@ -98,8 +97,7 @@
             cssmin: {
                 cssToDistMin: {
                     files: [{
-                        cwd: 'dist/',
-                        src: 'styles.css',
+                        src: 'dist/styles.css',
                         dest: 'dist/styles.min.css'
                     }]
                 }
@@ -132,6 +130,7 @@
 
             grunt.registerTask('prod', [
                 'concat:jsConcat',
+                'concat:cssConcat',
                 'uglify:jsToDistMin',
                 'cssmin:cssToDistMin',
                 'htmlmin:htmlToDistMin'

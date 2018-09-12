@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "http-server ./dist/ -a localhost -p 8000 -c-1 -o",
-    "dev": "http-server ./src/ -a localhost -p 8000 -c-1 -o"
+    "dev": "http-server ./src/ -a localhost -p 8080 -c-1 -o"
   },
   "author": "",
   "license": "ISC",

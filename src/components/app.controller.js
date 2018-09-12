@@ -7,5 +7,8 @@
         .controller('AppController',
             Controller);
 
-    Controller.$inject = [];
+    Controller.$inject = [
+    ];
+
+    function Controller() {}
 })();

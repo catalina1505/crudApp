@@ -10,8 +10,7 @@
     Controller.$inject = [
 			'dataHolder',
 			'ngNotify',
-			'httpMock'
-        	];
+			'httpMock'];
     
     function Controller(
 			dataHolder,
@@ -20,7 +19,8 @@
 						) 
 	{
 		var vm = this;
-		vm.newProduct = {};	
+		vm.newProduct = {};
+		vm.create = create;
 				
 		// create and push a new product into dataHolder
         vm.saveProduct = function(){

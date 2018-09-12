@@ -9,13 +9,11 @@
     
     Controller.$inject = ['$localstorage',
                         '$state',
-                        'ngNotify'
-    ];
+                        'ngNotify'];
     
      function Controller($localstorage,
                         $state,
-                        ngNotify
-                         )
+                        ngNotify)
     { 
         var vm = this;
         vm.check = check;

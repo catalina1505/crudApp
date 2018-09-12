@@ -11,14 +11,13 @@
 			'$state',
 			'dataHolder',
 			'ngNotify',
-			'httpMock'
-						];
+			'httpMock'];
+
 	function Controller(
 			$state,
 			dataHolder,
 			ngNotify,
-			httpMock
-						) 
+			httpMock) 
 	{
 		var vm = this;
 		vm.selected = {};
@@ -31,6 +30,7 @@
 		vm.viewProd = viewProd;
 		vm.editProd = editProd;
 		vm.submit = submit;
+		vm.init = init;
 
 		function submit() {
 			$state.go('welcome');
@@ -41,9 +41,9 @@
 			.getProducts()
 			.then(function (products) {
 				vm.prod = products;
-		}, function () {
-			ngNotify.set('The application doesn\'t work', 'error');
-		});
+				}, function () {
+					ngNotify.set('The application doesn\'t work', 'error');
+			});
 		}
 		init();
 
@@ -67,21 +67,21 @@
 					.then(function () {
 						ngNotify.set('The product was deleted!', 'success');
 					}, function () {
-					ngNotify.set('The product wasn\'t deleted!', 'error');
+						ngNotify.set('The product wasn\'t deleted!', 'error');
 				});
-				}
-				remove();
+			}
+			remove();
 		}
 
 		// sorting products
 		vm.sortBy = function(property) {
 			vm.reverse = (vm.propertyName === property) ? !vm.reverse : false;
 			vm.propertyName = property;	
-		  }
+		}
 
 		vm.getSortClass = function(property) {
 			return (vm.reverse && vm.propertyName === property) ? 'arrow-down' : 'arrow-up';
-		  }
+		}
 
 		function editProd(product) {
 			dataHolder.selected = product;

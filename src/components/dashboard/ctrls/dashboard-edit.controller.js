@@ -12,21 +12,19 @@
             'dataHolder',
             'ngNotify',
             'httpMock',
-            '$stateParams'
-        ];
+            '$stateParams'];
     
     function Controller (
             dataHolder,
             ngNotify,
             httpMock,
-            $stateParams
-        )   
+            $stateParams)   
     {
         var vm = this;
         vm.editProduct = {};
         vm.selected = dataHolder.selected;
         vm.prod = dataHolder.products;
-        
+        vm.edit = edit;
         
         // find the selected product and update it
         function edit() {

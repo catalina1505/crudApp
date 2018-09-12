@@ -8,20 +8,12 @@
                         Controller);
     
         Controller.$inject = [
-                'dataHolder',
-                '$localstorage',
-                '$state',
                 'httpMock',
-                '$stateParams'
-                                ];
+                '$stateParams'];
     
-        function Controller(
-                dataHolder,
-                $localstorage,
-                $state,
+        function Controller(              
                 httpMock,
-                $stateParams             
-                        ) 
+                $stateParams) 
         {
         var vm = this;
         vm.view = view;

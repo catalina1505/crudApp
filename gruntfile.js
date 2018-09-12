@@ -70,42 +70,40 @@
             },
 
             //Concatenation
-            concat: {
-                options: {
-                    sourceMap: true
-                },
+            concat: {               
                 jsConcat: {
-                    src: ['src/scripts/*.min.js', 'src/scripts/*.min.js.map', '**/*.module.js', '**/*.routing.js', '**/*.controller.js', '**/*.service.js'],
+                    src: ['src/scripts/jquery.min.js', 'src/scripts/bootstrap.min.js', 'src/scripts/angular.min.js', 'src/**/*.module.js', 'src/**/*.service.js', 'src/**/*.routing.js', 'src/**/*.controller.js'],
                     dest: 'dist/built.js'
             },
                  cssConcat: {
-                     src: ['src/styles/*.min.css', 'src/styles/*.min.css.map', 'src/assets/css/main.css'],
+                     src: ['src/styles/bootstrap.min.css', 'src/styles/tether.min.css','src/styles/ng-notify.min.css', 'src/styles/ngPrint.min.css', 'src/assets/main.css'],
                      dest: 'dist/styles.css'
-                 }
+                }
             },
 
             //Minification
             uglify: {
                 jsToDistMin: {
+                    options: {
+                        mangle:true
+                    },
                     files: [{
-                        expand: true,
                         cwd: 'dist/',
                         src: 'built.js',
                         dest: 'dist/built.min.js'
                     }]
                 }
-                },
+            },
     
             cssmin: {
                 cssToDistMin: {
                     files: [{
-                        expand: true,
                         cwd: 'dist/',
                         src: 'styles.css',
                         dest: 'dist/styles.min.css'
                     }]
                 }
-                },
+            },
 
             htmlmin: {
                 htmlToDistMin: {
@@ -116,24 +114,27 @@
                     files: [{
                         expand: true,
                         cwd: 'src/',
-                        src: 'index.html',
+                        src: ['**/*.html','!index.html'],
                         dest: 'dist/'
                     }]
                 }
-                } 
-            })
+            } 
+        })
             
             grunt.registerTask('default', [
                 'dev'
             ]);
 
             grunt.registerTask('dev', [
+                'copy:jsNpmToScripts',
+                'copy:cssNpmToStyles'
+            ]);
+
+            grunt.registerTask('prod', [
                 'concat:jsConcat',
                 'uglify:jsToDistMin',
                 'cssmin:cssToDistMin',
-                'htmlmin:htmlToDistMin',
-                'copy:jsNpmToScripts',
-                'copy:cssNpmToStyles',
+                'htmlmin:htmlToDistMin'
             ]);
 
             grunt.loadNpmTasks('grunt-contrib-concat');

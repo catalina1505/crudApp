@@ -13,7 +13,7 @@ Tech:
 
 Installation:
 
--https://help.github.com/articles/cloning-a-repository/;
+- https://help.github.com/articles/cloning-a-repository/;
 
 - npm install;
 

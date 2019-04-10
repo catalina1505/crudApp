@@ -1,7 +1,7 @@
 T-shirt shop inventory (crudApp)
 
 Tech:
--AngularJS
+-AngularJS, Bootstrap
 
 Utility:
 
